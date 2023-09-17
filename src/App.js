@@ -1,10 +1,24 @@
-import './App.css';
 import React from 'react';
 function App() {
   console.info('ssss')
   return (
     <div>
-      <h1>Xin chào anh em F8 !</h1>
+      <header>
+        <p>p</p>
+        <p>p</p>
+        <span>span</span>
+        <span>-span</span>
+        <h1>h1</h1>
+        <h2>h2</h2>
+        <h3>h3</h3>
+        <h4>h4</h4>
+        <h5>h5</h5>
+        <h6>h6</h6>
+        <b>tag B</b>
+        <i>TAG I</i>
+      </header>
+      <main></main>
+      <footer></footer>
     </div>
   );
 }

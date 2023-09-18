@@ -4,8 +4,9 @@ const { sassLoader } = require('sass-loader');
 module.exports = {
   entry:"./src/index.js",
   output: {
-    path: path.join(__dirname, '/build'),
-    filename: 'bundle.js',
+    path: path.join(__dirname, '/dist'),
+    filename: '[name][contenthash].js',
+    clean: true
   },
   mode:'development',
   module: {
@@ -13,7 +14,6 @@ module.exports = {
       {
         test: /\.js$/,
         use: 'babel-loader',
-        exclude: /node_modules/,
       },
       {
         test: /\.scss$/i,
@@ -26,11 +26,13 @@ module.exports = {
       template:"./public/index.html"
     })
   ],
-  // devServer: {
-  //   static: {
-  //     directory: path.join(__dirname, 'public'),
-  //   },
-  //   compress: true,
-  //   port: 9000,
-  // },
+  devServer: {
+    static: {
+      directory: path.join(__dirname, 'public'),
+    },
+    compress: true,
+    port: 9999,
+    hot: true,
+    historyApiFallback: true
+  },
 };
